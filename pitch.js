@@ -2,7 +2,9 @@ var Pitch = {
   expiredMessage: `<span id="number">0</span> minutes <span id="number">0</span> seconds`,
   expiredMessage2: `Everyday life is filled with everything.`,
   expiredMessage3: `When you get tired of your filled life.`,
-  expiredMessage4: `It's not bad to feel nothing.`,
+  expiredMessage4: `Feel nothing.`,
+  expiredMessage5: `Nothing.`,
+  expiredMessage6: ``,
   startTime: 0,
   endTime: 0,
   remainTime: 0,
@@ -16,19 +18,26 @@ var Pitch = {
   countDown: function() {
       var progressText = document.getElementById("progressText");
 
-      if (Pitch.remainTime <= -4 && Pitch.remainTime > -8) {
+      if (Pitch.remainTime <= -4 && Pitch.remainTime > -9) {
           // 残り時間が x秒未満の場合に2つ目の時間切れメッセージを表示
           Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage2}`;
-      } else if (Pitch.remainTime <= -8 && Pitch.remainTime > -14) {
+      } else if (Pitch.remainTime <= -9 && Pitch.remainTime > -14) {
           // 残り時間が x秒未満の場合に3つ目の時間切れメッセージを表示
           Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage3}`;
-      }
-      else if (Pitch.remainTime <= -14) {
+      } else if (Pitch.remainTime <= -14 && Pitch.remainTime > -19) {
           // 残り時間が x秒未満の場合に4つ目の時間切れメッセージを表示
+          Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage4}`;
-      } else if (Pitch.remainTime <= 1) {
+      } else if (Pitch.remainTime <= -19 && Pitch.remainTime > -26) {
+          // 残り時間が x秒未満の場合に5つ目の時間切れメッセージを表示
+          Pitch.remainTime -= 1;
+          progressText.innerHTML = `${Pitch.expiredMessage5}`;
+      } else if (Pitch.remainTime <= -26) {
+          // 残り時間が x秒未満の場合に6つ目の時間切れメッセージを表示
+          progressText.innerHTML = `${Pitch.expiredMessage6}`;
+      }  else if (Pitch.remainTime <= 1) {
           // 残り時間が 1秒未満の場合に時間切れメッセージを表示
           Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage}`;
