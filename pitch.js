@@ -1,8 +1,8 @@
 var Pitch = {
   expiredMessage: `<span id="number">0</span> minutes <span id="number">0</span> seconds`,
-  expiredMessage2: `Processing will continue.`,
-  expiredMessage3: `We don't usually feel the operation of the program.`,
-  expiredMessage4: `Thanks for watching.`,
+  expiredMessage2: `Everyday life is filled with everything.`,
+  expiredMessage3: `When you get tired of your filled life.`,
+  expiredMessage4: `It's not bad to feel nothing.`,
   startTime: 0,
   endTime: 0,
   remainTime: 0,
@@ -21,7 +21,7 @@ var Pitch = {
           Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage2}`;
       } else if (Pitch.remainTime <= -8 && Pitch.remainTime > -14) {
-          // 残り時間が x秒未満の場合に2つ目の時間切れメッセージを表示
+          // 残り時間が x秒未満の場合に3つ目の時間切れメッセージを表示
           Pitch.remainTime -= 1;
           progressText.innerHTML = `${Pitch.expiredMessage3}`;
       }
